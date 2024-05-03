@@ -1,0 +1,10 @@
+<div *ngIf="header || body" class="absolute top-0 right-0 m-4 z-50">
+    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 relative" role="alert">
+      <button class="absolute top-0 right-0 px-3 py-1" (click)="closeAlert()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p class="font-bold">{{ header }}</p>
+      <p>{{ body }}</p>
+    </div>
+  </div>
+  
