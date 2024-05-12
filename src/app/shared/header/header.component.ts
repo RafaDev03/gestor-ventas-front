@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { AuthService } from '~/auth/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,15 @@ import { AuthService } from '~/auth/auth.service';
   styleUrl: './header.component.css'
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   state: boolean = false;
+  user: string = '';
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private cookieService: CookieService) { }
+
+  ngOnInit(): void {
+    this.user = this.cookieService.get('user');
+  }
 
   toggleState() {
     this.state = !this.state;
@@ -23,5 +29,5 @@ export class HeaderComponent {
 
   logOut() {
     this.authService.logOut();
-  }  
+  }
 }
