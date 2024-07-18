@@ -1,0 +1,48 @@
+<header
+    class="sticky top-0 z-50 flex items-center justify-between w-full bg-white border-b-2 border-gray-300 dark:bg-boxdark dark:border-none shadow-lg py-4">
+    <div class="flex items-center ml-auto mr-4 cursor-pointer" (click)="toggleState();">
+        <div class="flex flex-col items-start px-4 md:px-6 2xl:px-11">
+            <div class="flex items-center">
+                <span class="font-bold text-lg text-primary-dark">{{user}}</span>
+            </div>
+            <span class="text-xs text-gray-500">Desarrollador Senior</span>
+        </div>
+        <img src="/assets/icons/user.svg" class="w-8 h-8 mr-2" alt="Icono de usuario">
+    </div>
+    <div class="flex items-center gap-4 mr-4">
+    </div>
+</header>
+<div *ngIf="state === true"
+    class="absolute right-0 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark px-4 py-4">
+    <ul class="flex flex-col gap-5 px-4 py-7.5">
+        <li>
+            <a class="flex items-center gap-3.5 hover:bg-slate-100 font-normal text-slate-700 cursor-pointer">
+                <svg class="w-6 h-6 text-gray-500  transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                    <path
+                        d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5 3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z" />
+                </svg>
+                Ver Perfil
+            </a>
+        </li>
+        <li>
+            <a class="flex items-center gap-3.5 hover:bg-slate-100 font-normal text-slate-700 cursor-pointer">
+                <svg class="w-6 h-6 text-gray-500  transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                    fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25" />
+                </svg>Gestionar Cuenta
+            </a>
+        </li>
+        <hr class="border-t border-gray-300 dark:border-gray-300">
+        <li>
+            <a (click)="logOut();" class="flex items-center gap-3.5 hover:bg-slate-100 font-normal text-slate-700 cursor-pointer">
+                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
+                </svg> Cerrar Sesión
+            </a>
+        </li>
+    </ul>
+</div>
